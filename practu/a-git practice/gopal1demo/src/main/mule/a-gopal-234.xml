@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="24b715a6-8b19-46dc-8f71-62a032ce1f28" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="a-gopal-234Flow" doc:id="64c226c2-c2eb-4fa9-b431-c219fda480d6" >
+		<http:listener doc:name="Listener" doc:id="71e2133e-a26e-4161-a3fa-e37edfd2ef1b" config-ref="HTTP_Listener_config" path="/mgit"/>
+		<set-payload value="-----this is mule with git-------" doc:name="Set Payload" doc:id="8c132137-7514-4d54-b5de-af8e2fb31b1e" />
+		<logger level="INFO" doc:name="Logger" doc:id="f49fb7f9-b6bf-48ea-8c03-6f5f7da2034b" />
+	</flow>
+</mule>
